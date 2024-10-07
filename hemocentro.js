@@ -17,7 +17,21 @@ function cadastrarDoador(){
     dia = parseFloat(ask.question('Por favor, insira o dia da ultima doacao: '))
     mes = parseFloat(ask.question('Por favor, insira o mes da ultima doacao: '))
     ano = parseFloat(ask.question('Por favor, insira o ano da ultima doacao: '))
-    
+
+    ultimaDoacao = {
+        dia,
+        mes,
+        ano
+    }
+
+    let doador = {
+        nome,
+        idade,
+        peso,
+        tipoSanguineo,
+        ultimaDoacao: {dia, mes, ano}
+    }
+
     if(typeof nome === 'number'){
         console.log('nome invalido')
     }else if(typeof idade === 'string'){
@@ -35,21 +49,9 @@ function cadastrarDoador(){
     }else{
         doadores.push(doador)
     }    
+    
+    
 
-
-    ultimaDoacao = {
-        dia,
-        mes,
-        ano
-    }
-
-    let doador = {
-        nome,
-        idade,
-        peso,
-        tipoSanguineo,
-        ultimaDoacao
-    }
 }
 
 function listarDoadores(){
@@ -275,5 +277,3 @@ while(ativoPrograma){
             ask.question('pressione enter para continuar: ')
     }
 }
-
-
